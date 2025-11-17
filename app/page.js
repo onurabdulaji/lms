@@ -1,6 +1,11 @@
 import Text from "@/components/Text";
+import { getCourses } from "@/queries/courses";
 
-export default function Home() {
+export default async function Home() {
+
+  const coureses = await getCourses();
+  console.log(coureses);
+
   return (
     <Text />
   );
