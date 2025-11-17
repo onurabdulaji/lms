@@ -18,8 +18,8 @@ const CourseSchema = new Schema({
         type: String
     },
     modules: {
-        required: true,
-        type: [Schema.ObjectId],
+        type: Schema.ObjectId,
+        ref: "Module",
     },
     price: {
         required: true,
@@ -30,17 +30,17 @@ const CourseSchema = new Schema({
         type: Boolean
     },
     category: {
-        required: true,
         type: Schema.ObjectId,
+        ref: "Category",
     },
     instructor: {
-        required: true,
         type: Schema.ObjectId,
+        ref: "User",
     },
-    testimonials: {
-        required: true,
-        type: [Schema.ObjectId],
-    },
+    testimonials: [{
+        type: Schema.ObjectId,
+        ref: "Testimonial",
+    }],
     quizSet: {
         required: true,
         type: Schema.ObjectId,
